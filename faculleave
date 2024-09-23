@@ -1,0 +1,83 @@
+/*
+SQLyog Ultimate v8.82 
+MySQL - 5.1.50-community : Database - facleave
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`facleave` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `facleave`;
+
+/*Table structure for table `leaverq` */
+
+DROP TABLE IF EXISTS `leaverq`;
+
+CREATE TABLE `leaverq` (
+  `name` varchar(30) DEFAULT NULL,
+  `ltype` varchar(20) DEFAULT NULL,
+  `stdate` varchar(20) DEFAULT NULL,
+  `endate` varchar(20) DEFAULT NULL,
+  `reason` varchar(20) DEFAULT NULL,
+  `command` varchar(20) DEFAULT '----',
+  `stat` varchar(10) DEFAULT '----'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `leaverq` */
+
+insert  into `leaverq`(`name`,`ltype`,`stdate`,`endate`,`reason`,`command`,`stat`) values ('inshaal','Medical','09-09-2018','09-10-2018','ill seriously','get well soon','Accept');
+
+/*Table structure for table `login` */
+
+DROP TABLE IF EXISTS `login`;
+
+CREATE TABLE `login` (
+  `usertype` varchar(25) DEFAULT NULL,
+  `username` varchar(25) DEFAULT NULL,
+  `password` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `login` */
+
+insert  into `login`(`usertype`,`username`,`password`) values ('Admin','admin','admin1'),('Faculty','inshaal','8962');
+
+/*Table structure for table `messages` */
+
+DROP TABLE IF EXISTS `messages`;
+
+CREATE TABLE `messages` (
+  `facname` varchar(30) DEFAULT NULL,
+  `msg` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `messages` */
+
+/*Table structure for table `staff` */
+
+DROP TABLE IF EXISTS `staff`;
+
+CREATE TABLE `staff` (
+  `name` varchar(30) DEFAULT NULL,
+  `age` varchar(10) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `dob` varchar(20) DEFAULT NULL,
+  `dept` varchar(30) DEFAULT NULL,
+  `addr` varchar(50) DEFAULT NULL,
+  `cont` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `staff` */
+
+insert  into `staff`(`name`,`age`,`gender`,`dob`,`dept`,`addr`,`cont`) values ('inshaal','23','Male','12-12-1212','Computer Science','wkjdkjwnef','123456543');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
